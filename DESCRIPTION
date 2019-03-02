@@ -1,0 +1,10 @@
+Package: BIOL464
+Title: Toold for BIOL 464: Animal Physiology
+Version: 0.22
+Author: Kirt Onthank <Kirt.Onthank@wallawalla.edu>
+Maintainer: Kirt Onthank <Kirt.Onthank@wallawalla.edu>
+Description: This package is a collection of tools that are used in the Animal Physiology course at Walla Walla University
+Depends: R (>= 3.1.2)
+License: Creative Commons
+LazyData: true
+RoxygenNote: 6.1.1
