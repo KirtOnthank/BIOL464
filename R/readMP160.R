@@ -12,7 +12,7 @@ read.mp160=
   thing=readLines(con,n=15)
   close(con)
   tim=thing[2]
-  chan=nchar(thing[grep("CH",thing)])/4
+  chan=floor(nchar(thing[grep("CH",thing)])/4)
   chan.list=substr(thing[grep("CH",thing)],1,3)
   if (chan>1){
     for (i in 2:chan){
@@ -21,7 +21,9 @@ read.mp160=
   }
   start=grep("CH",thing)+2
   dura=as.numeric(gsub('(\\d+\\.\\d+) msec/sample','\\1',tim))/1000
-  volt=read.table(file,skip=start)
+  if (grepl(",",thing[15])){
+    volt=read.csv(file,skip=start)
+  } else {volt=read.table(file,skip=start)}
   volt.time=seq(from=0,to=(length(volt[,1])-1)*dura,by=dura)
   volt=cbind(volt.time,volt)
   colnames(volt)=c("time",chan.list)
