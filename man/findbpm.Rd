@@ -4,7 +4,7 @@
 \alias{findbpm}
 \title{Determine heart rate}
 \usage{
-findbpm(x, t = 30)
+findbpm(x, t = 30, bounds = c(0, 10000))
 }
 \arguments{
 \item{x}{A vector of voltages of an ecg from AcqKnowledge}
